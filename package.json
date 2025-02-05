@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "load-test": "k6 run test_k6.js",
+    "security-test": "k6 run test_security_k6.js",
+    "all-tests": "k6 run test_k6.js && k6 run test_security_k6.js",
+    "create-report": "node k6-reporter.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +19,8 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "k6": "^0.0.0",
+    "k6-html-reporter": "^1.0.5",
     "nodemon": "^3.1.9"
   }
 }
